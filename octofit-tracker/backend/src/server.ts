@@ -1,5 +1,5 @@
 import express from 'express';
-import { apiRouter } from './routes.js';
+import { apiRouter } from './routes.ts';
 
 export function createServer() {
   const app = express();
@@ -17,7 +17,7 @@ export function createServer() {
 export function getBaseUrl() {
   const codespaceName = process.env.CODESPACE_NAME;
   if (codespaceName) {
-    return `https://${codespaceName}-8000.githubpreview.dev`;
+    return `https://${codespaceName}-8000.app.github.dev`;
   }
   return `http://localhost:8000`;
 }

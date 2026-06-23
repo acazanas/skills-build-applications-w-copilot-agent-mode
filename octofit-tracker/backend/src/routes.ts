@@ -1,5 +1,5 @@
 import { Router } from 'express';
-import { Activity, Leaderboard, Team, User, Workout } from './models.js';
+import { Activity, Leaderboard, Team, User, Workout } from './models.ts';
 
 export const apiRouter = Router();
 
