@@ -1,18 +1,14 @@
-import express from 'express';
 import mongoose from 'mongoose';
+import { createServer } from './server.js';
 
-const app = express();
 const port = Number(process.env.PORT ?? 8000);
 const mongoUri = process.env.MONGODB_URI ?? 'mongodb://localhost:27017/octofit-tracker';
 
-app.use(express.json());
-
-app.get('/health', (_req, res) => {
-  res.json({ status: 'ok' });
-});
+const app = createServer();
 
 app.listen(port, async () => {
   console.log(`Backend listening on port ${port}`);
+  console.log(`API base URL: ${process.env.CODESPACE_NAME ? `https://${process.env.CODESPACE_NAME}-8000.githubpreview.dev` : `http://localhost:${port}`}`);
   try {
     await mongoose.connect(mongoUri);
     console.log('Connected to MongoDB');
