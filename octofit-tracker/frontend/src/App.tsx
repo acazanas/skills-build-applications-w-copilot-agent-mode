@@ -1,9 +1,9 @@
 import React from 'react';
-import Activities from './Activities';
-import Leaderboard from './Leaderboard';
-import Teams from './Teams';
-import Users from './Users';
-import Workouts from './Workouts';
+import Activities from './components/Activities';
+import Leaderboard from './components/Leaderboard';
+import Teams from './components/Teams';
+import Users from './components/Users';
+import Workouts from './components/Workouts';
 
 function App() {
   return (
